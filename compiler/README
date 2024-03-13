@@ -1,0 +1,16 @@
+The first three parts of a compiler written in C++ for a simple language named PCL. 
+
+To run the lexer: 
+flex -o lexer.cpp lexer.l
+c++ -std=c++11 -o lexer lexer.cpp
+./lexer <PCL_file
+
+To run the parser: 
+make
+./pcl <PCL_file
+
+To run the interpreter:
+make
+./pcl <PCL_file
+
+
