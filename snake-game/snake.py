@@ -29,27 +29,16 @@ class Snake:
         self.whole_snake.append(self.snake)
         
 
+    def reset(self):
+        for seg in self.whole_snake:
+            seg.goto(1000,1000)
+        self.whole_snake.clear()
+        self.create_snake()
+        self.head = self.whole_snake[0]
+
     def extend(self):
         self.add(self.whole_snake[-1].position())
         
-        # last_x = self.whole_snake[-1].xcor()
-        # last_y = self.whole_snake[-1].ycor()
-        # if self.head.heading() == LEFT:
-        #    new_x = last_x + STEP
-        #    new_y = last_y
-        # elif self.head.heading() == RIGHT:
-        #     new_x = last_x - STEP
-        #     new_y = last_y
-        # elif self.head.heading() == UP:
-        #     new_y = last_y - STEP
-        #     new_x = last_x
-        # else:
-        #     new_y = last_y + STEP
-        #     new_x = last_x
-        # self.snake.setx(new_x)
-        # self.snake.setx(new_y)
-        # self.snake.showturtle()
-
 
     def right(self):
         if self.head.heading() != LEFT:
