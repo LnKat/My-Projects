@@ -21,10 +21,7 @@ def create_tim(x_axis, y_axis, answer, color):
 
 def print_missed_states(correct_list):
     all_states = df.state.tolist()
-    missed_list = []
-    for state in all_states:
-        if state not in correct_list:
-            missed_list.append(state)
+    missed_list = [state for state in all_states if state not in correct_list]
     missed_df = pandas.DataFrame(missed_list)
     missed_df.to_csv("missed_states.csv")
     #Let's print missed states on the map!
@@ -40,6 +37,7 @@ correct_state_list = []
 while correct_guesses < 50:
     answer_state = screen.textinput(title=f"{correct_guesses}/50 States Correct", prompt="What's another state name?")
     answer_state = answer_state.title()
+    # correct_state_list = [st for st in all_states ]
     if answer_state in df.state.values:
         correct_state_list.append(answer_state)
         correct_guesses+=1
