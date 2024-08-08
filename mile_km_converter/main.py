@@ -12,7 +12,7 @@ window.title("Miles to Km Converter")
 #window.minsize(width=400, height=300)
 window.config(padx=50, pady=50)
 
-label_mi = Label(text="Miles", font=("Arial",15))git 
+label_mi = Label(text="Miles", font=("Arial",15))
 label_mi.grid(row=0,column=2)
 label_mi.config(padx=15, pady=15)
 
